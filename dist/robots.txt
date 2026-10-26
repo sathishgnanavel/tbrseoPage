@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://threebestrated.com/sitemap.xml
