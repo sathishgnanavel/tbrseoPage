@@ -14,6 +14,8 @@ export const APP = {
   website: 'https://threebestrated.com',
   privacyUrl: 'https://threebestrated.com/privacy-policy',
   supportEmail: 'support@threebestrated.com',
+  pressEmail: 'press@threebestrated.com',
+  termsUrl: 'https://threebestrated.com/terms-of-service', // confirm this URL
   phone: '+1 888-551-1667',
   address: '311 Ranch Road 620 S Ste 211, Lakeway, TX 78734-4776, United States',
   since: 2014,

@@ -112,6 +112,16 @@ export const FAQS = [
     a: `The app covers more than 200 cities in ${APP.countries.length} countries: ${APP.countries.slice(0, -1).join(', ')} and ${APP.countries[APP.countries.length - 1]}. More than 500,000 verified businesses are listed.`,
   },
   {
+    id: 'every-business',
+    q: 'Does ThreeBestRated list every business in a city?',
+    a: 'No. ThreeBestRated focuses on selected businesses rather than an exhaustive directory of every business in a category. Each search shows the top three.',
+  },
+  {
+    id: 'categories',
+    q: 'Can I find different types of local services in the app?',
+    a: 'Yes. The app covers professionals, restaurants, healthcare providers and other local services. The options shown depend on your location and the category you select.',
+  },
+  {
     id: 'languages',
     q: 'Which languages are supported?',
     a: 'The Google Play listing says the app is available in English, German, French and Hindi. The App Store listing currently shows English.',

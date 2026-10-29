@@ -1,11 +1,15 @@
 import { APP, PAGE_URL, PODIUM_SIZES, SCREENSHOT_SETS, SITE_URL, STORES, shotSrcSet, shotUrl } from '../data/app'
 
 export const SEO = {
-  title: 'ThreeBestRated App Download: Top 3 Local Businesses Near You',
+  title: 'ThreeBestRated App | Find Top Local Businesses Near You',
   description:
-    'Download the free ThreeBestRated app for iPhone, iPad and Android phones and tablets. See the top 3 verified local businesses in 200+ cities across 8 countries.',
+    'Find trusted local businesses with the ThreeBestRated app. Top professionals, restaurants and healthcare providers selected by a 50-Point Inspection.',
+  ogTitle: 'ThreeBestRated App | Discover Top Local Businesses',
+  ogDescription:
+    'Explore handpicked local professionals, restaurants and healthcare providers with the ThreeBestRated app.',
+  twitterDescription: "Find trusted local businesses with ThreeBestRated's 50-Point Inspection.",
   keywords:
-    'ThreeBestRated app, download ThreeBestRated, ThreeBestRated iPhone app, ThreeBestRated iPad app, ThreeBestRated Android app, top 3 local businesses, best local services near me, best rated doctors near me, best lawyers near me, local business finder app',
+    'ThreeBestRated app, download ThreeBestRated, ThreeBestRated iPhone app, ThreeBestRated Android app, top 3 local businesses, best local professionals near me, best restaurants near me, healthcare providers near me, 50-Point Inspection, local business finder app',
   ogImage: `${SITE_URL}/og-image.png`,
   ogImageAlt: 'ThreeBestRated app on a phone: only the top three local businesses near you',
   themeColor: '#112142',
@@ -41,8 +45,10 @@ export function buildHeadHtml(jsonLd: object): string {
     p('og:type', 'website'),
     p('og:site_name', APP.name),
     p('og:locale', 'en_US'),
-    p('og:title', SEO.title),
-    p('og:description', SEO.description),
+    p('og:title', SEO.ogTitle),
+    p('og:description', SEO.ogDescription),
+    t('twitter:title', SEO.ogTitle),
+    t('twitter:description', SEO.twitterDescription),
     p('og:url', PAGE_URL),
     p('og:image', SEO.ogImage),
     p('og:image:width', '1200'),

@@ -18,13 +18,16 @@ export function buildJsonLd() {
         legalName: APP.developer,
         url: SITE_URL,
         logo: { '@type': 'ImageObject', url: `${SITE_URL}/icon-512.png`, width: 512, height: 512 },
-        contactPoint: {
-          '@type': 'ContactPoint',
-          contactType: 'customer support',
-          email: APP.supportEmail,
-          telephone: APP.phone,
-          availableLanguage: [...APP.languages],
-        },
+        contactPoint: [
+          {
+            '@type': 'ContactPoint',
+            contactType: 'customer support',
+            email: APP.supportEmail,
+            telephone: APP.phone,
+            availableLanguage: [...APP.languages],
+          },
+          { '@type': 'ContactPoint', contactType: 'press', email: APP.pressEmail },
+        ],
         address: {
           '@type': 'PostalAddress',
           streetAddress: '311 Ranch Road 620 S Ste 211',
@@ -85,8 +88,8 @@ export function buildJsonLd() {
         availableOnDevice: ['iPhone', 'iPad', 'Android phones', 'Android tablets'],
         isAccessibleForFree: true,
         featureList: [
-          'Top three verified local businesses in every category',
-          '50-point inspection by trained analysts',
+          'Top three selected local businesses in every category',
+          '50-Point Inspection covering reputation, history, complaints, ratings, proximity, satisfaction, trust, cost, reviews and excellence',
           'AI assistant that matches a problem to the top three businesses',
           'Voice search',
           'Honest customer reviews',

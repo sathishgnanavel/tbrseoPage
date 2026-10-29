@@ -10,8 +10,9 @@ export function Hero() {
         <div className="hero__copy">
           <h1 id="hero-title">ThreeBestRated app: only the top three local businesses near you</h1>
           <p className="lede">
-            Open the app, pick a category and see three verified choices. Every business passes a 50-point
-            inspection of reputation, reviews and service quality, so you can stop comparing and start booking. Free on iPhone, iPad, and Android phones and tablets.
+            Discover the top three local businesses, professionals, restaurants and healthcare providers in your city.
+            ThreeBestRated&rsquo;s team selects businesses using a 50-Point Inspection, helping you explore trusted local
+            options with less searching. Free to download for iPhone, iPad, and Android phones and tablets.
           </p>
           <StoreButtons placement="hero" tone="light" />
           <ul className="ratings" aria-label="Store ratings">
