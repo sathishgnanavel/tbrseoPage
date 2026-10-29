@@ -20,7 +20,7 @@ export function Reviews() {
               <p>{lead.quote}</p>
             </blockquote>
             <figcaption>
-              {lead.name}, {lead.store}, {lead.date}
+              {lead.name}, {lead.store}
             </figcaption>
           </figure>
           {rest.map((r) => (
@@ -29,7 +29,7 @@ export function Reviews() {
                 <p>{r.quote}</p>
               </blockquote>
               <figcaption>
-                {r.name}, {r.store}, {r.date}
+                {r.name}, {r.store}
               </figcaption>
             </figure>
           ))}

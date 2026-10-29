@@ -235,6 +235,14 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   scrollbar-width: none; animation: gallery-in .5s var(--ease) both;
 }
 .gallery::-webkit-scrollbar { display: none; }
+/* Keep the gallery inside the page width (same left edge as the heading) instead of bleeding to the screen edges. */
+.gallery {
+  --card: min(62vw, 278px); /* four cards fit the content width exactly on desktop */
+  width: min(100%, calc(var(--wrap) + 40px)); margin-inline: auto;
+  padding-inline: 20px; scroll-padding-inline: 20px;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 20px, #000 calc(100% - 20px), transparent);
+  mask-image: linear-gradient(to right, transparent, #000 20px, #000 calc(100% - 20px), transparent);
+}
 .gallery--tablet { --card: min(68vw, 300px); }
 .gallery li { flex: 0 0 var(--card); scroll-snap-align: start; }
 .gallery button {
@@ -368,10 +376,9 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 @media (prefers-reduced-motion: no-preference) {
   .progress span { transition: transform .15s linear; }
   @supports (animation-timeline: view()) {
-    .gallery li { perspective: 1100px; }
     .gallery button {
       position: relative; isolation: isolate; /* isolation keeps the rounded corners clean in Safari */
-      animation: card-tilt-in linear backwards, card-tilt-out linear forwards;
+           animation: card-settle-in linear backwards, card-settle-out linear forwards;
       animation-timeline: view(inline), view(inline);
       animation-range: entry 0% entry 100%, exit 0% exit 100%;
     }
@@ -383,8 +390,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
     }
   }
 }
-@keyframes card-tilt-in { from { rotate: 0 1 0 22deg; } to { rotate: 0 1 0 0deg; } }
-@keyframes card-tilt-out { from { rotate: 0 1 0 0deg; } to { rotate: 0 1 0 -22deg; } }
+@keyframes card-settle-in { from { translate: 0 16px; } to { translate: 0 0; } }
+@keyframes card-settle-out { from { translate: 0 0; } to { translate: 0 16px; } }
 @keyframes card-glint { from { translate: -120% 0; } to { translate: 120% 0; } }
 
 
