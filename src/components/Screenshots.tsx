@@ -29,7 +29,7 @@ export function Screenshots() {
   useEffect(() => {
     list.current?.scrollTo({ left: 0 })
     syncProgress()
-  }, [current.set, syncProgress])
+  }, [device, syncProgress])
 
   const page = (dir: 1 | -1) => {
     const el = list.current
@@ -89,7 +89,7 @@ export function Screenshots() {
 
       <div id="shots-panel" role="tabpanel" aria-labelledby={`device-${device}`}>
         <ul
-          key={current.set}
+          key={current.id}
           ref={list}
           className={`gallery gallery--${current.set}`}
           aria-label={`${current.label} screenshots`}
@@ -106,7 +106,7 @@ export function Screenshots() {
 
         <div className="wrap shots-foot">
           <div className="shots-foot__left">
-            <p className="shots-foot__note">{current.note}</p>
+<p key={current.id} className="shots-foot__note">{current.note}</p>
             <span className="progress" aria-hidden="true">
               <span ref={thumb} />
             </span>
