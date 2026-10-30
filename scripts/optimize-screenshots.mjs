@@ -13,6 +13,7 @@ const SETS = [
 ]
 
 let total = 0
+
 for (const set of SETS) {
   const srcDir = path.resolve(set.src)
   if (!fs.existsSync(srcDir)) {

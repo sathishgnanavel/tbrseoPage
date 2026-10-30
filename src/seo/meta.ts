@@ -71,7 +71,8 @@ export function buildHeadHtml(jsonLd: object): string {
     `<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />`,
     // The hero's centre screenshot is the likely largest contentful paint, so fetch it before the CSS finishes.
     `<link rel="preload" as="image" type="image/webp" imagesrcset="${esc(shotSrcSet('phone', heroShot))}" imagesizes="${esc(PODIUM_SIZES)}" fetchpriority="high" />`,
-    `<link rel="stylesheet" href="${esc(FONT_HREF)}" />`,
+    `<link rel="stylesheet" href="${esc(FONT_HREF)}" media="print" onload="this.media='all'" />`,
+    `<noscript><link rel="stylesheet" href="${esc(FONT_HREF)}" /></noscript>`,
     `<script type="application/ld+json">${json}</script>`,
   ].join('\n    ')
 }
