@@ -18,6 +18,7 @@ export function buildJsonLd() {
         legalName: APP.developer,
         url: SITE_URL,
         logo: { '@type': 'ImageObject', url: `${SITE_URL}/icon-512.png`, width: 512, height: 512 },
+        sameAs: APP.social.map((s) => s.url),
         contactPoint: [
           {
             '@type': 'ContactPoint',

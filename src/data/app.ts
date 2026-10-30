@@ -19,6 +19,13 @@ export const APP = {
   phone: '+1 888-551-1667',
   address: '311 Ranch Road 620 S Ste 211, Lakeway, TX 78734-4776, United States',
   since: 2014,
+    social: [
+    { id: 'facebook', label: 'Facebook', url: 'https://www.facebook.com/ThreeBestRatedOfficial/' },
+    { id: 'x', label: 'X', url: 'https://x.com/threebestrated' },
+    { id: 'instagram', label: 'Instagram', url: 'https://www.instagram.com/threebestrated/' },
+    { id: 'youtube', label: 'YouTube', url: 'https://www.youtube.com/c/ThreeBestRated' },
+    { id: 'linkedin', label: 'LinkedIn', url: 'https://www.linkedin.com/company/threebestrated-official/' },
+  ],
   stats: {
     monthlyUsers: '5M+',
     businesses: '500,000+',

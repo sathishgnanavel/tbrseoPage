@@ -1,6 +1,6 @@
 import { APP } from '../data/app'
 import { Logo } from './Logo'
-
+import { SocialLinks } from './SocialLinks'
 export function Footer() {
   return (
     <footer className="footer">
@@ -21,6 +21,8 @@ export function Footer() {
             <li><a href={APP.termsUrl}>Terms</a></li>
             <li><a href={`mailto:${APP.pressEmail}`}>Press: {APP.pressEmail}</a></li>
           </ul>
+                    <SocialLinks />
+
         </nav>
         <address>
           {APP.developer}
