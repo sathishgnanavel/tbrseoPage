@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useAppStore } from '.'
 import type { DeviceId } from '../data/app'
 import type { Platform } from './types'
-
+import { detectStoreFromDevice } from '../data/app'
 function detectDevice(): { platform: Platform; device?: DeviceId } {
   const ua = navigator.userAgent
   if (/android/i.test(ua)) {
@@ -14,15 +14,18 @@ function detectDevice(): { platform: Platform; device?: DeviceId } {
     return { platform: 'ios', device: 'ipad' }
   }
   if (/iPhone|iPod/i.test(ua)) return { platform: 'ios', device: 'iphone' }
-  return { platform: 'desktop' }
+return { platform: 'desktop' }
 }
 
 export function usePlatformDetection() {
   const setPlatform = useAppStore((s) => s.setPlatform)
   useEffect(() => {
-    const { platform, device } = detectDevice()
-    setPlatform(platform, device)
-  }, [setPlatform])
+const { platform, device } = detectDevice()
+setPlatform(platform, device);
+if (platform === 'desktop') {
+  const store = detectStoreFromDevice()
+  if (store) useAppStore.getState().setActiveStore(store)
+}  }, [setPlatform])
 }
 
 export function useStickyCtaTrigger(offset = 640) {

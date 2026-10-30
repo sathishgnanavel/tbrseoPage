@@ -450,3 +450,43 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .store-btn::after { display: none; }
   *, *::before, *::after { transition-duration: .01ms !important; }
 }
+/* Podium screenshots: colored double ring so each screen stands out from the dark background */
+.podium__item--1 .podium__shot {
+  box-shadow: 0 0 0 3px var(--ink), 0 0 0 6px var(--gold), 0 40px 70px -20px rgba(0, 0, 0, .8), 0 0 70px -6px rgba(242, 182, 50, .55);
+}
+.podium__item--2 .podium__shot {
+  box-shadow: 0 0 0 3px var(--ink), 0 0 0 5px var(--silver), 0 36px 60px -22px rgba(0, 0, 0, .75), 0 0 40px -8px rgba(197, 208, 212, .4);
+}
+.podium__item--3 .podium__shot {
+  box-shadow: 0 0 0 3px var(--ink), 0 0 0 5px var(--bronze), 0 36px 60px -22px rgba(0, 0, 0, .75), 0 0 40px -8px rgba(201, 130, 79, .45);
+}
+
+/* Keep the colored ring on hover too (mouse users only) */
+@media (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) {
+  .podium__item--1:hover .podium__shot {
+    box-shadow: 0 0 0 3px var(--ink), 0 0 0 6px var(--gold), 0 52px 80px -20px rgba(0, 0, 0, .85), 0 0 90px -4px rgba(242, 182, 50, .7);
+  }
+  .podium__item--2:hover .podium__shot {
+    box-shadow: 0 0 0 3px var(--ink), 0 0 0 5px var(--silver), 0 50px 70px -22px rgba(0, 0, 0, .8), 0 0 55px -6px rgba(197, 208, 212, .55);
+  }
+  .podium__item--3:hover .podium__shot {
+    box-shadow: 0 0 0 3px var(--ink), 0 0 0 5px var(--bronze), 0 50px 70px -22px rgba(0, 0, 0, .8), 0 0 55px -6px rgba(201, 130, 79, .6);
+  }
+}
+section.cta { padding-bottom: 32px !important; }
+footer.footer { padding-top: 20px !important; }
+footer.footer .footer__grid { align-items: start !important; }
+footer.footer .footer__grid > div:first-child .logo,
+footer.footer .footer__grid > div:first-child a { display: inline-flex; margin: 0; }
+footer.footer .footer__grid > nav,
+footer.footer .footer__grid > address { padding-top: 10px; margin: 0; }
+@media (min-width: 961px) {
+  section.cta .cta__grid { flex-wrap: nowrap; align-items: center; justify-content: space-between; }
+  section.cta .cta__grid > :first-child { flex: 1 1 auto; min-width: 0; }
+  section.cta .qr { display: flex; flex: none; margin-left: auto; }
+}
+@media (max-width: 960px) {
+  section.cta .qr { flex-direction: row; flex-wrap: nowrap; align-items: flex-start; gap: 16px; }
+  section.cta .qr figure { flex: 0 1 132px; min-width: 0; }
+  section.cta .qr img { width: 100%; height: auto; aspect-ratio: 1; }
+}

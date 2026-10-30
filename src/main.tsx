@@ -11,8 +11,8 @@ const app = (
 )
 
 // Production pages are prerendered, so hydrate; in `vite dev` the root is empty, so render.
-if (root.hasChildNodes()) hydrateRoot(root, app)
-else {
+if (root.firstElementChild) hydrateRoot(root, app)
+  else {
   document.title ||= 'ThreeBestRated App Download'
   createRoot(root).render(app)
 }

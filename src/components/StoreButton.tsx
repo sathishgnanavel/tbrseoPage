@@ -1,7 +1,7 @@
 import { STORES, type StoreId } from '../data/app'
 import { useAppStore } from '../store'
 import { AppleIcon, PlayIcon } from './Icons'
-
+import { selectPrimaryStore } from '../store/selectors'
 interface Props {
   store: StoreId
   placement: string
@@ -34,7 +34,8 @@ export function StoreButton({ store, placement, featured = false, tone = 'light'
 }
 
 export function StoreButtons({ placement, tone = 'light' }: { placement: string; tone?: 'light' | 'dark' }) {
-  const platform = useAppStore((s) => s.platform)
+  // const platform = useAppStore((s) => s.platform)
+  const platform = useAppStore(selectPrimaryStore)
   const order: StoreId[] = platform === 'ios' ? ['ios', 'android'] : ['android', 'ios']
   return (
     <div className="store-row">

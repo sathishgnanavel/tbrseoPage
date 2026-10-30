@@ -66,6 +66,7 @@ export const WHATS_NEW = [
   'Mapbox maps with multiple map styles',
   'Push notifications and deep links to Top Three and single-business screens',
   'In-app reviews',
+  'TBR Assistant for business recommendations',
   'Faster, cleaner interface',
 ] as const
 

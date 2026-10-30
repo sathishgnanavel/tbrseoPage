@@ -15,7 +15,7 @@ const mark = (size) => `
   <rect x="41" y="38" width="14" height="14" rx="3" fill="#C9824F"/>
 </svg>`
 
-fs.writeFileSync(path.join(out, 'favicon.svg'), mark(64))
+// fs.writeFileSync(path.join(out, 'favicon.svg'), mark(64))
 await sharp(Buffer.from(mark(512))).png().toFile(path.join(out, 'icon-512.png'))
 await sharp(Buffer.from(mark(180))).png().toFile(path.join(out, 'apple-touch-icon.png'))
 

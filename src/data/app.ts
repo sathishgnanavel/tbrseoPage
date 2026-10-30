@@ -212,7 +212,14 @@ export interface Device {
   /** One factual line shown under the gallery, taken from the store listings. */
   note: string
 }
-
+/** Windows/Android/Linux → Play Store, Mac/iPhone/iPad → App Store. Returns null if unknown. */
+export function detectStoreFromDevice(): StoreId | null {
+  if (typeof navigator === 'undefined') return null
+  const ua = navigator.userAgent
+  if (/iPhone|iPad|iPod|Macintosh|Mac OS X/i.test(ua)) return 'ios'
+  if (/Android|Windows|Linux|CrOS/i.test(ua)) return 'android'
+  return null
+}
 export const DEVICES: Record<DeviceId, Device> = {
   iphone: {
     id: 'iphone',

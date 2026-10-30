@@ -1,7 +1,12 @@
 import type { StoreId } from '../data/app'
-import type { AppState } from './types'
+import type { useAppStore } from '.'
 
-/** The store to feature first: iPhone visitors see the App Store, everyone else sees Google Play. */
-export const selectPrimaryStore = (s: AppState): StoreId => (s.platform === 'ios' ? 'ios' : 'android')
+// import type { AppState } from './types'
+// import { detectStoreFromDevice } from '../data/app'
+
+type AppState = ReturnType<typeof useAppStore.getState>
+
+export const selectPrimaryStore = (s: AppState): StoreId =>
+  s.platform === 'ios' ? 'ios' : s.platform === 'android' ? 'android' : s.activeStore
 export const selectSecondaryStore = (s: AppState): StoreId => (s.platform === 'ios' ? 'android' : 'ios')
 export const selectIsMobile = (s: AppState): boolean => s.platform === 'ios' || s.platform === 'android'
